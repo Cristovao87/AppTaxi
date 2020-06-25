@@ -1,0 +1,31 @@
+﻿@model AppTaxi.Models.Motorista
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+    <h3>Deseja Realmente Excluir este Motorista?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BI)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BI)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MotoristaID" />
+        <input type="submit" value="Excluir Motorista" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar para Listagem</a>
+    </form>
+</div>

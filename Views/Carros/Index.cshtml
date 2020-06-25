@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AppTaxi.Models.Carro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listagem de Carros</h2>
+
+<p>
+    <a asp-action="Create">Registar Novo Carro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Motorista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cobrador)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motorista.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cobrador.Nome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CarroID">Actualizar</a> |
+                <a asp-action="Details" asp-route-id="@item.CarroID">Ver em Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.CarroID">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

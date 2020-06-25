@@ -1,0 +1,32 @@
+﻿@model AppTaxi.Models.Cobrador
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h3>Desejas Realmente Excluir este Cobrador?</h3>
+<div>
+    <h4>Cobrador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BI)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BI)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CobradorID" />
+        <input type="submit" value="Excluir Cobrador" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar para Listagem</a>
+    </form>
+</div>

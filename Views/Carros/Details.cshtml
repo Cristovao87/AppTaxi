@@ -1,0 +1,36 @@
+﻿@model AppTaxi.Models.Carro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Visualizar Detalhes de um Carro</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Motorista)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Motorista.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cobrador)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cobrador.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CarroID">Actualizar Carro</a> |
+    <a asp-action="Index">Voltar para Listagem</a>
+</div>
