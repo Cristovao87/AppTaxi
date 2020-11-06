@@ -38,5 +38,6 @@ namespace AppTaxi.Dados
         public DbSet<Cobrador> Cobradores { get; set; }
         public DbSet<Rota> Rotas { get; set; }
         public DbSet<AppTaxi.Models.RotaCarro> RotaCarro { get; set; }
+        public DbSet<Abertura> Aberturas { get; set; }
     }
 }

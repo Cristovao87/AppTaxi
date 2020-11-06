@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AppTaxi.Models.Abertura>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carro.Matricula)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AberturaID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AberturaID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AberturaID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

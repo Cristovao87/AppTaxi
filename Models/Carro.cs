@@ -14,5 +14,6 @@ namespace AppTaxi.Models
         public int CobradorID { get; set; }
         public virtual Cobrador Cobrador { get; set; }
         public virtual List<RotaCarro> RotaCarros { get; set; }
+        public virtual List<Abertura> Aberturas { get; set; }
     }
 }
