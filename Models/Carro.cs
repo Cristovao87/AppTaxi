@@ -9,11 +9,8 @@ namespace AppTaxi.Models
     {
         public int CarroID { get; set; }
         public string Matricula { get; set; }
-        public int MotoristaID { get; set; }
-        public virtual Motorista Motorista { get; set; }
-        public int CobradorID { get; set; }
-        public virtual Cobrador Cobrador { get; set; }
-        public virtual List<RotaCarro> RotaCarros { get; set; }
-        public virtual List<Abertura> Aberturas { get; set; }
+        public int DiariaID { get; set; }
+        public virtual Diaria Diaria { get; set; }
+        public virtual List<Pessoa> Pessoas { get; set; }
     }
 }

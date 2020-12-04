@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace AppTaxi.Models
 {
-    public class Cobrador
+    public class CarteiraPassageiro
     {
-        public int CobradorID { get; set; }
+        public int CarteiraPassageiroID { get; set; }
         public int PessoaID { get; set; }
         public virtual Pessoa Pessoa { get; set; }
-        public int DiariaID { get; set; }
-        public virtual Diaria Diaria { get; set; }
-        public string NumeroAssociado { get; set; }
+        public double Saldo { get; set; }
+        public int PagamentoID { get; set; }
+        public virtual Pagamento Pagamento { get; set; }
     }
 }

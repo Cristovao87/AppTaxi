@@ -12,32 +12,20 @@ namespace AppTaxi.Dados
         public TaxiContexto(DbContextOptions<TaxiContexto> options) : base(options)
         {
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            
-            base.OnModelCreating(modelBuilder);
-
-            //RotaCarro
-            modelBuilder.Entity<RotaCarro>()
-                .HasKey(rc => new { rc.RotaID, rc.CarroID });
-
-            //Carro
-            modelBuilder.Entity<RotaCarro>()
-                .HasOne(c => c.Carro)
-                .WithMany(rc => rc.RotaCarros)
-                .HasForeignKey(c => c.CarroID);
-
-            //Rota
-            modelBuilder.Entity<RotaCarro>()
-                .HasOne(r => r.Rota)
-                .WithMany(rc => rc.RotaCarros)
-                .HasForeignKey(r => r.RotaID);
-        }
+        
         public DbSet<Carro> Carros { get; set; }
         public DbSet<Motorista> Motoristas { get; set; }
         public DbSet<Cobrador> Cobradores { get; set; }
         public DbSet<Rota> Rotas { get; set; }
-        public DbSet<AppTaxi.Models.RotaCarro> RotaCarro { get; set; }
-        public DbSet<Abertura> Aberturas { get; set; }
+        public DbSet<CarteiraPassageiro> CarteiraPassageiros { get; set; }
+        public DbSet<RotaDestino> RotaDestinos { get; set; }
+        public DbSet<Diaria> Diarias { get; set; }
+        public DbSet<Pagamento> Pagamentos { get; set; }
+        public DbSet<Passageiro> Passageiros { get; set; }
+        public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<RotaCorrida> RotaCorridas { get; set; }
+        public DbSet<RotaOrigem> RotaOrigens { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+
     }
 }

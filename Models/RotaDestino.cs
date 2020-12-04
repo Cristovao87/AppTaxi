@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace AppTaxi.Models
 {
-    public class RotaCarro
+    public class RotaDestino
     {
+        public int RotaDestinoID { get; set; }
         public int RotaID { get; set; }
         public virtual Rota Rota { get; set; }
-        public int CarroID { get; set; }
-        public virtual Carro Carro { get; set; }
+        public string Destino { get; set; }
     }
 }

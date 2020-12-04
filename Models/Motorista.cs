@@ -8,8 +8,11 @@ namespace AppTaxi.Models
     public class Motorista
     {
         public int MotoristaID { get; set; }
-        public string Nome { get; set; }
-        public string BI { get; set; }
-        public virtual List<Carro> Carros { get; set; }
+        public int PessoaID { get; set; }
+        public virtual Pessoa Pessoa { get; set; }
+        public string NumeroCarta { get; set; }
+        public int CarroID { get; set; }
+        public virtual Carro Carro { get; set; }
+       
     }
 }
